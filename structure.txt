@@ -1,0 +1,59 @@
+CuraCore/
+├── 📂 backend/                       # THE BRAIN (Python FastAPI)
+│   ├── 📂 app/
+│   │   ├── 📂 api/                   # API Endpoints (Routes)
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py               # Login/Signup logic
+│   │   │   ├── chat.py               # AI Chat endpoints
+│   │   │   ├── doctors.py            # Doctor search/listing
+│   │   │   ├── appointments.py       # Booking & Queue management
+│   │   │   └── voice.py              # Audio file processing
+│   │   │
+│   │   ├── 📂 core/                  # Configuration
+│   │   │   ├── config.py             # Settings
+│   │   │   └── database.py           # DB Connection
+│   │   │
+│   │   ├── 📂 models/                # Database Tables
+│   │   │   ├── users.py              # Patient profile
+│   │   │   ├── doctors.py            # Doctor profile
+│   │   │   └── appointments.py       # The link between them
+│   │   │
+│   │   ├── 📂 services/              # AI Logic modules
+│   │   │   ├── rag_service.py        # PDF Search (ChromaDB)
+│   │   │   ├── llm_service.py        # Ollama wrapper
+│   │   │   ├── whisper_service.py    # Speech-to-Text
+│   │   │   └── summarizer.py         # Chat-to-Summary logic
+│   │   │
+│   │   └── main.py                   # App Entry Point
+│   │
+│   ├── 📂 data/                      # Local Storage
+│   │   ├── 📂 chromadb/              # Vector DB files
+│   │   ├── 📂 medical_pdfs/          # Source PDFs
+│   │   └── curacore.db               # SQLite Database
+│   │
+│   ├── .env                          # Secrets
+│   └── requirements.txt              # Python dependencies
+│
+├── 📂 frontend/                      # THE FACE (React + Vite)
+│   ├── 📂 src/
+│   │   ├── 📂 assets/                # Images/Icons
+│   │   ├── 📂 components/            # Reusable UI parts
+│   │   │   ├── 📂 common/            # Navbar, Inputs, Buttons
+│   │   │   ├── 📂 patient/           # ChatBubble, DoctorCard
+│   │   │   └── 📂 doctor/            # QueueItem, PatientSummary
+│   │   │
+│   │   ├── 📂 pages/                 # Full Screens
+│   │   │   ├── Landing.jsx
+│   │   │   ├── PatientDashboard.jsx
+│   │   │   ├── DoctorDashboard.jsx
+│   │   │   └── Login.jsx
+│   │   │
+│   │   ├── 📂 services/              # API Calls (Axios)
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx                   # Routing
+│   │   └── main.jsx
+│   │
+│   └── package.json
+│
+└── README.md

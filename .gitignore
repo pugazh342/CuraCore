@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.pyc
+venv/
+*.env
+
+# --- JavaScript / React ---
+node_modules/
+dist/
+.DS_Store
+
+# --- CuraCore Specific (Generated Data) ---
+# Ignore the Database file (it regenerates)
+*.db
+*.sqlite
+
+# Ignore the Vector Database (it is too big, rebuild it using ingest_pdfs.py)
+backend/data/chromadb/
+
+# Ignore temporary voice uploads
+backend/data/uploads/
+
+# Optional: Keep PDFs? 
+# If you want to share the PDFs, remove the line below. 
+# If they are copyrighted, keep this line to ignore them.
+# backend/data/medical_pdfs/
