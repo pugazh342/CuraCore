@@ -53,3 +53,11 @@ def complete_appointment(appt_id: int, db: Session = Depends(get_db)):
     appt.status = "completed"
     db.commit()
     return {"status": "marked as completed"}
+
+@router.get("/patient/{patient_id}")
+def get_patient_history(patient_id: int, db: Session = Depends(get_db)):
+    # Get all appointments for this patient
+    return db.query(Appointment)\
+        .filter(Appointment.patient_id == patient_id)\
+        .order_by(Appointment.appointment_date.desc())\
+        .all()

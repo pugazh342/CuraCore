@@ -3,15 +3,12 @@ import { createContext, useState, useContext, useEffect } from "react";
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
-  // Check LocalStorage on load
-  useEffect(() => {
+  // ⚡ FIX: Read from localStorage immediately (Lazy Initialization)
+  // This prevents the app from thinking you are "logged out" for 1 millisecond on refresh
+  const [user, setUser] = useState(() => {
     const storedUser = localStorage.getItem("curacore_user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
 
   const login = (userData) => {
     setUser(userData);

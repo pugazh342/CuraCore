@@ -76,4 +76,8 @@ export const getUserProfile = async (userId) => {
   return response.data;
 };
 
+export const getPatientAppointments = async (patientId) => {
+  const response = await api.get(`/appointments/patient/${patientId}`);
+  return response.data;
+};
 export default api;

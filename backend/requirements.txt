@@ -1,0 +1,30 @@
+# --- Core API Framework ---
+fastapi==0.109.2
+uvicorn==0.27.1
+python-multipart==0.0.9
+
+# --- Database & ORM ---
+sqlalchemy==2.0.27
+pydantic==2.6.1
+pydantic-settings==2.1.0
+
+# --- Authentication & Security ---
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+
+# --- AI & LLM Integration ---
+ollama==0.1.6           # Python client for Ollama
+langchain==0.1.9        # Framework for RAG
+langchain-community==0.0.24
+langchain-core==0.1.26
+
+# --- Vector Database & Embeddings ---
+chromadb==0.4.22
+sentence-transformers==2.3.1  # For creating embeddings locally
+
+# --- PDF Processing ---
+pypdf==4.0.1
+
+# --- Voice Processing (Whisper) ---
+openai-whisper==20231117
+numpy==1.26.4
